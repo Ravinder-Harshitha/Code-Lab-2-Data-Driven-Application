@@ -57,7 +57,7 @@ heading.place(x=310, y=50)
 instructions_label1 = Label(information_frame, text=" This application primarily provides information about movies based on genre, \n popularity and user preferences.", fg="white", bg="#181818", font=("Lucida Sans", 10))
 instructions_label1.place(x=150, y=100)
 
-instructions_label2 = Label(information_frame, text="Using the buttons on the left navigation of the screen, you can navigate and search \n different movies according to what you are looking for.", fg="white", bg="#181818", font=("Lucida Sans", 10))
+instructions_label2 = Label(information_frame, text="Using the buttons on the side navigation of the screen, you can navigate and search \n different movies according to what you are looking for.", fg="white", bg="#181818", font=("Lucida Sans", 10))
 instructions_label2.place(x=150, y=150)
 
 # image in instruction frame
