@@ -1,9 +1,9 @@
 #import tkinter module and messagebox and other libraries
 from tkinter import *
+import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image 
 from tkinter import messagebox
-import tkinter as tk
 import requests
 import random
 import io
@@ -36,7 +36,7 @@ bg_image_label1.place(x=-2,y=-2)
 
 
 # Instructions button
-button = Button(start_frame, text="Instructions", fg="black", bg="#FFFB38", bd = 0, font=("Lucida Sans", 10, "bold"), command=lambda:show_frame(instruction_frame))
+button = Button(start_frame, text="Information", fg="black", bg="#FFFB38", bd = 0, font=("Lucida Sans", 10, "bold"), command=lambda:show_frame(information_frame))
 button.place(x=595, y=232, height=30, width=100)
 
 # Enter button
@@ -46,29 +46,29 @@ button_1.place(x=595, y=326, height=30, width=100)
 
 
 # instruction frame to display instructions
-instruction_frame = Frame(root, bg="#181818")
-instruction_frame.place(x=50, y=50, height=450, width=800)
+information_frame = Frame(root, bg="#181818")
+information_frame.place(x=50, y=50, height=450, width=800)
 
 # heading label
-heading = Label(instruction_frame, text="INSTRUCTIONS", fg="#FFFB38", bg="#181818", font=("Lucida Sans", 15,"bold"))
+heading = Label(information_frame, text="INFORMATION", fg="#FFFB38", bg="#181818", font=("Lucida Sans", 15,"bold"))
 heading.place(x=310, y=50)
 
 # text labels
-instructions_label1 = Label(instruction_frame, text=" This application primarily provides information about movies based on genre, \n popularity and user preferences.", fg="white", bg="#181818", font=("Lucida Sans", 10))
-instructions_label1.place(x=140, y=100)
+instructions_label1 = Label(information_frame, text=" This application primarily provides information about movies based on genre, \n popularity and user preferences.", fg="white", bg="#181818", font=("Lucida Sans", 10))
+instructions_label1.place(x=150, y=100)
 
-instructions_label2 = Label(instruction_frame, text="Using the buttons on the left navigation of the screen, you can navigate and search \n different movies according to what you are looking for.", fg="white", bg="#181818", font=("Lucida Sans", 10))
-instructions_label2.place(x=170, y=150)
+instructions_label2 = Label(information_frame, text="Using the buttons on the left navigation of the screen, you can navigate and search \n different movies according to what you are looking for.", fg="white", bg="#181818", font=("Lucida Sans", 10))
+instructions_label2.place(x=150, y=150)
 
 # image in instruction frame
 pic_0 = Image.open("juliasart170500014-removebg-preview.png")
 pic_1 = pic_0.resize((170,170))
 img1 = ImageTk.PhotoImage(pic_1)
-imgLabel1 = Label(instruction_frame, image=img1, bg="#181818")
+imgLabel1 = Label(information_frame, image=img1, bg="#181818")
 imgLabel1.place(x=300, y=200)
 
 # Place order button
-enter_button = Button(instruction_frame, text="Enter", fg="black", bg="#FFFB38", font=("Lucida Sans", 10, "bold"), command=lambda:show_frame(main_frame))
+enter_button = Button(information_frame, text="Enter", fg="black", bg="#FFFB38", font=("Lucida Sans", 10, "bold"), command=lambda:show_frame(main_frame))
 enter_button.place(x=335, y=400, height=30, width=100)
 
 
@@ -223,6 +223,12 @@ class SearchMovies:
         else:
             messagebox.showerror("Error","Please enter a search query.")
 
+    # Function to destroy/update the frames
+    def clear_info(self):
+        for widget in self.parent_frame.winfo_children():
+            widget.destroy()
+
+# Creating an instance of the MovieApp within the popular frame
 movie_app_instance = SearchMovies(root, search_frame)
 
 # back button to go back to home page                                 
@@ -436,6 +442,11 @@ class MovieGenre:
         else:
             messagebox.showerror("Error","No movie data to display.")
 
+    # Function to destroy/update the frames
+    def clear_info(self):
+        for widget in self.parent_frame.winfo_children():
+            widget.destroy()
+
 # Creating an instance of the MovieApp within the popular frame
 movie_app_instance = MovieGenre(root, genre_frame)
 
@@ -569,6 +580,11 @@ class PopularMovie:
         else:
             #print("No movie data to display.")
             messagebox.showerror("Error", "No movie data to display.")
+    
+    # Function to destroy/update the frames
+    def clear_info(self):
+        for widget in self.parent_frame.winfo_children():
+            widget.destroy()
 
 # Creating an instance of the MovieApp within the popular frame
 movie_app_instance = PopularMovie(root, popular_frame)
