@@ -61,10 +61,10 @@ instructions_label2 = Label(instruction_frame, text="Using the buttons on the na
 instructions_label2.place(x=170, y=150)
 
 # image in instruction frame
-pic1 = Image.open("juliasart170500014-removebg-preview.png")
-pic2 = pic1.resize((170,170))
-img1 = ImageTk.PhotoImage(pic2)
-imgLabel1 = Label(instruction_frame, image=img1, bg="#181818")
+pic0 = Image.open("juliasart170500014-removebg-preview.png")
+pic1 = pic0.resize((170,170))
+img0 = ImageTk.PhotoImage(pic1)
+imgLabel1 = Label(instruction_frame, image=img0, bg="#181818")
 imgLabel1.place(x=300, y=200)
 
 # Place order button
@@ -89,7 +89,7 @@ menuframe.place(x=0, y=0, height=580, width=200)
 
 # image in menu frame
 pic1 = Image.open("juliasart170500014-removebg-preview.png")
-pic2 = pic2.resize((100,100))
+pic2 = pic1.resize((100,100))
 img1 = ImageTk.PhotoImage(pic2)
 imgLabel3 = Label(menuframe, image=img1, bg="#222222")
 imgLabel3.place(x=50, y=300)
