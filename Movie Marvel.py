@@ -1,4 +1,4 @@
-#import tkinter module and messagebox and other libraries
+#import tkinter module and messagebox and other necessary libraries
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
@@ -362,7 +362,7 @@ class MovieGenre:
             {"id": 10749, "name": "Romance"},
         ]
 
-        self.genre_combobox = ttk.Combobox(findgenreframe, values=[genre["name"] for genre in self.genres])  # Corrected
+        self.genre_combobox = ttk.Combobox(findgenreframe, values=[genre["name"] for genre in self.genres])  
         self.genre_combobox.set("Select Genre")
         self.genre_combobox.place(x=210, y=30, width=250, height=25)
 
@@ -379,7 +379,7 @@ class MovieGenre:
             movie_list = response.json().get('results', [])
             return random.choice(movie_list) if movie_list else None
         else:
-            messagebox.showerror("Error","Failed to fetch random movie of genre ID {genre_id}.")
+            messagebox.showerror("Error",f"Failed to fetch random movie of genre ID {genre_id}.")
             return None
 
     # Function to get movie details and display
