@@ -8,7 +8,7 @@ import requests
 import random
 import io
 
-# Set the output window
+# Output window
 root = Tk()
 # name of the window
 root.title('MovieMarvel')
@@ -45,7 +45,7 @@ button_1.place(x=595, y=326, height=30, width=100)
 
 
 
-# instruction frame to display instructions
+# information frame to display instructions
 information_frame = Frame(root, bg="#181818")
 information_frame.place(x=50, y=50, height=450, width=800)
 
@@ -602,7 +602,7 @@ b6.place(x=56, y=530, height=30, width=90)
 end_frame = Frame(root)
 end_frame.place(x=10, y=10, height=580, width=880)
 
-# background image to enf frame
+# background image to end frame
 bg_image = Image.open("Purple Gradient Metaverse Desktop Prototype (1).png")
 resize_image = bg_image.resize((880,580))
 bg_img2 = ImageTk.PhotoImage(resize_image)
